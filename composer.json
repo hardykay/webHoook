@@ -1,6 +1,6 @@
 {
   "name": "hardykay/webhook",
-  "type": "library",
+  "type": "project",
   "description": "this is a tool package.",
   "keywords": [
     "map"
