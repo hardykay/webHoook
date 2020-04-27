@@ -74,7 +74,7 @@ class FunTools {
         $res .=  "info:".$res_log.PHP_EOL;
         $res .=  "log end --------".PHP_EOL;
         if (empty($logPath)){
-            $logPath = __DIR__.'/log/'.date('Y-m').'/';
+            $logPath = __DIR__ . '/log/';
         } else {
             $logPath =$logPath.date('Y-m').'/';
         }

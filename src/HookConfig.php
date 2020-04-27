@@ -67,7 +67,7 @@ class HookConfig {
      * 设置配置信息
      */
     private function setConfig(){
-        $config = include('config.php');
+        $config = include(__DIR__.'/config.php');
         $this->config = $config['project'][$this->project_name];
         if (empty($this->config)){
             $this->config = $config['project']['default'];
@@ -79,7 +79,7 @@ class HookConfig {
         $this->rootPath = $this->config['rootPath'];
         // 日志记录
         if (!array_key_exists('logPath', $config['logPath']) || empty($config['logPath']) || strpos($config['logPath'], './') === false){
-            $this->logPath = __DIR__.'/log/'. $this->project_name. '/';
+            $this->logPath = __DIR__ . '/log/';
         } else {
             $this->logPath = $config['logPath'] . $this->project_name. '/';
         }

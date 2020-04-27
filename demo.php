@@ -1,6 +1,4 @@
 <?php
-require_once 'HookConfig.php';
-require_once 'WebHook.php';
 
 try{
     // 获取项目名
@@ -16,7 +14,7 @@ try{
     // 数据填充
     $runHook->migrate();
 } catch (\Exception $e){
-    FunTools::git_log($e->getMessage(),'报错信息','',__DIR__.'/log/Error/');
+    \Hook\FunTools::git_log($e->getMessage(),'报错信息','',__DIR__.'/log/Error/');
 }
 
 

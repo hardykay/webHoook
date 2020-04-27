@@ -1,7 +1,6 @@
 <?php
 namespace Hook;
 
-require_once 'function.php';
 /**
  * git钩子执行类
  * Class WebHook
