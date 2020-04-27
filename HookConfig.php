@@ -1,7 +1,6 @@
 <?php
 namespace Hook;
 
-require_once 'function.php';
 
 class HookConfig {
     // 项目保存的目录，即根目录
@@ -38,7 +37,7 @@ class HookConfig {
      */
     private function setWebHookData(){
         $requestBody = file_get_contents('php://input');
-        git_log($requestBody,'post');
+        FunTools::git_log($requestBody,'post');
         if (empty($requestBody)) {
             die('send fail');
         }

@@ -34,18 +34,18 @@ class WebHook {
             $this->isClone = true;
         }
         // 获取配置信息备用
-        $this->gitConfigList = get_git_config();
+        $this->gitConfigList = FunTools::get_git_config();
     }
     /**
      * 设置git config global
      */
     private function setGitUser(){
-        $data = get_git_config();
+        $data = FunTools::get_git_config();
         if (!array_key_exists('user.name', $data) || empty($data['user.name']) || !array_key_exists('user.email', $data) || empty($data['user.email'])){
             // 用户名
-            set_git_config_global('user.name', $this->hook->user['user_name']);
+            FunTools::set_git_config_global('user.name', $this->hook->user['user_name']);
             // 邮箱
-            set_git_config_global('user.name', $this->hook->user['email']);
+            FunTools::set_git_config_global('user.name', $this->hook->user['email']);
         }
     }
     /**
@@ -165,6 +165,6 @@ class WebHook {
         $this->log($res, 'php seed');
     }
     public function log($res_log, $message='未知'){
-        git_log($res_log, $message, $this->hook->user['user_name'], $this->hook->logPath);
+        FunTools::git_log($res_log, $message, $this->hook->user['user_name'], $this->hook->logPath);
     }
 }
