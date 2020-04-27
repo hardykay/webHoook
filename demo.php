@@ -1,4 +1,5 @@
 <?php
+require_once 'vendor/autoload.php';
 
 try{
     // 获取项目名

@@ -12,7 +12,7 @@
  * 注意，所有路径最后一个字符不能是“/”
  */
 return [
-    'logPath' => '',
+    'logPath' => '/var/www/',
     'project'=> [
         'default' => [ // 默认值是没有project_name的
             'rootPath' => '/var/www/',

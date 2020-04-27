@@ -81,6 +81,7 @@ class FunTools {
 
         if (!is_dir($logPath)){
             mkdir($logPath, 0777, true);
+            file_put_contents($logPath.'.gitignore', "*".PHP_EOL."!.gitignore", FILE_APPEND);//写入日志到log文件中
         }
         file_put_contents($logPath.$logFile, $res, FILE_APPEND);//写入日志到log文件中
     }
