@@ -67,7 +67,7 @@ class HookConfig {
      * 设置配置信息
      */
     private function setConfig(){
-        $config = include(__DIR__.'/config.php');
+        $config = include(__DIR__ . '/config.php');
         $this->config = $config['project'][$this->project_name];
         if (empty($this->config)){
             $this->config = $config['project']['default'];
